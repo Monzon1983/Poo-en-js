@@ -59,3 +59,26 @@ class CuentaBancaria {
     return this.#saldo;
   }
 }
+
+// --- TEST DE EJECUCIÓN ---
+
+console.log("--- Nivel 1: Objeto Literal ---");
+console.log(auto.arrancar()); 
+
+console.log("\n--- Nivel 2 y 3: Prototipos ---");
+console.log(persona1.saludar());
+console.log(persona2.saludar());
+console.log(`${persona1.nombre} dice: ${persona1.caminar()}`);
+
+console.log("\n--- Nivel 4: Herencia ---");
+const miPerro = new Perro("Firulais");
+console.log(`${miPerro.nombre} hace: ${miPerro.hacerSonido()}`);
+
+console.log("\n--- Nivel 5: Encapsulamiento ---");
+const miCuenta = new CuentaBancaria(1000);
+miCuenta.depositar(500);
+miCuenta.retirar(200);
+console.log(`Saldo actual: $${miCuenta.verSaldo()}`);
+
+// Intento de hackeo (esto debería fallar o dar error de sintaxis si intentás acceder directo)
+// console.log(miCuenta.#saldo); // Si descomentás esto, Node te va a dar un error privado.
